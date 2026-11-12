@@ -3,51 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Schedule</title>
+    <title>My Busiest Day</title>
     <style>
       body {
         margin: 0;
         background: #d3d3d3;
-        font-family: Arial, Helvetica, sans-serif;
         color: #111;
+        font-family: Arial, Helvetica, sans-serif;
       }
 
       .page {
-        max-width: 1280px;
+        max-width: 760px;
         margin: 0 auto;
-        padding: 30px 20px 20px;
-      }
-
-      .top-row {
-        display: grid;
-        grid-template-columns: 1.7fr 1fr;
-        gap: 38px;
-        align-items: center;
-      }
-
-      .intro {
-        font-size: 23px;
-        line-height: 1.45;
-        margin: 0;
-        padding: 10px 0 0 0;
+        padding: 32px 20px;
       }
 
       .schedule-box {
+        padding: 24px;
         background: #dfeaf2;
         border: 4px solid #2d6374;
         border-radius: 20px;
-        padding: 18px 20px 16px;
-        width: 100%;
-        max-width: 520px;
-        margin-left: auto;
-        box-sizing: border-box;
       }
 
-      .schedule-title {
+      h1 {
+        margin: 0 0 8px;
         text-align: center;
-        font-size: 52px;
-        font-weight: 700;
-        margin: 8px 0 18px;
+        font-size: 40px;
+      }
+
+      .date {
+        margin: 0 0 20px;
+        text-align: center;
+        font-size: 18px;
       }
 
       .schedule-table {
@@ -59,122 +46,78 @@
 
       .schedule-table th,
       .schedule-table td {
+        padding: 12px;
         border: 2px solid #2d6374;
-        padding: 10px;
-        text-align: center;
+        text-align: left;
         font-size: 18px;
       }
 
       .schedule-table th {
+        background: #2d6374;
+        color: #fff;
+        text-align: center;
+      }
+
+      .schedule-table col:first-child {
+        width: 68%;
+      }
+
+      .schedule-table tbody tr:nth-child(even) {
         background: #e4e4e4;
+      }
+
+      .schedule-table tbody tr:first-child td {
         font-weight: 700;
       }
 
-      .schedule-table tr:nth-child(even) td {
-        background: #f1f1f1;
-      }
-
-      .schedule-table col:nth-child(1) {
-        width: 55%;
-      }
-
-      .checklist {
-        margin-top: 28px;
-        background: rgba(255,255,255,0.2);
-        border: 3px solid #d94d4d;
-        border-radius: 8px;
-        padding: 18px 20px 16px 20px;
-      }
-
-      .checklist h2 {
-        margin: 0 0 10px 0;
-        font-size: 25px;
-      }
-
-      .checklist ul {
-        margin: 0;
-        padding-left: 34px;
-        font-size: 22px;
-        line-height: 1.5;
-      }
-
-      .checklist li {
-        margin-bottom: 4px;
-      }
-
-      .checklist ul ul {
-        padding-left: 28px;
-        margin-top: 5px;
-      }
-
-      @media (max-width: 900px) {
-        .top-row {
-          grid-template-columns: 1fr;
+      @media (max-width: 520px) {
+        .schedule-box {
+          padding: 16px;
         }
 
-        .schedule-box {
-          margin: 0 auto;
+        h1 {
+          font-size: 32px;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+          padding: 9px;
+          font-size: 16px;
         }
       }
     </style>
   </head>
   <body>
-    <div class="page">
-      <div class="top-row">
-        <p class="intro">
-          Think of one of your busiest days you've had recently. Create a table that shows
-          your schedule for that day. It should include each chore, errand, task, meal, or
-          whatever else was important to you, and at what time you had to do it. The focus
-          here is on your HTML and CSS skills so you can pad your schedule with events that
-          never happened, or even just make everything up. Make sure that all your CSS
-          styling is done through internal CSS for this project (not inline styling).
-          Classes and ids can be used as needed.
-        </p>
+    <main class="page">
+      <section class="schedule-box" aria-labelledby="schedule-heading">
+        <h1 id="schedule-heading">My Busiest Day</h1>
+        <p class="date">Monday, April 8</p>
 
-        <div class="schedule-box">
-          <div class="schedule-title">Schedule</div>
-
-          <table class="schedule-table" aria-label="Daily schedule table">
-            <colgroup>
-              <col />
-              <col />
-            </colgroup>
-            <thead>
-              <tr>
-                <th scope="col">Date</th>
-                <th scope="col">Time</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Mon 4/8</td><td>7:00 AM</td></tr>
-              <tr><td>Mon 4/8</td><td>7:45 AM</td></tr>
-              <tr><td>Mon 4/8</td><td>8:30 AM</td></tr>
-              <tr><td>Mon 4/8</td><td>10:00 AM</td></tr>
-              <tr><td>Mon 4/8</td><td>12:15 PM</td></tr>
-              <tr><td>Mon 4/8</td><td>2:30 PM</td></tr>
-              <tr><td>Mon 4/8</td><td>6:00 PM</td></tr>
-              <tr><td>Mon 4/8</td><td>9:00 PM</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="checklist">
-        <h2>Your completed assignment should contain all of the following:</h2>
-        <ul>
-          <li>
-            An internal style sheet that modifies;
-            <ul>
-              <li>at least one row</li>
-              <li>at least one column</li>
-              <li>table headers</li>
-              <li>the table itself</li>
-              <li>all table cells</li>
-            </ul>
-          </li>
-          <li>Include at least 8 events and times.</li>
-        </ul>
-      </div>
-    </div>
+        <table class="schedule-table">
+          <colgroup>
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">Event</th>
+              <th scope="col">Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Wake up and get ready</td><td>7:00 AM</td></tr>
+            <tr><td>Make breakfast and pack lunch</td><td>7:30 AM</td></tr>
+            <tr><td>Commute to work</td><td>8:00 AM</td></tr>
+            <tr><td>Team planning meeting</td><td>9:00 AM</td></tr>
+            <tr><td>Work on project deadline</td><td>10:30 AM</td></tr>
+            <tr><td>Lunch break</td><td>12:15 PM</td></tr>
+            <tr><td>Finish project and answer email</td><td>1:00 PM</td></tr>
+            <tr><td>Pick up groceries on the way home</td><td>4:30 PM</td></tr>
+            <tr><td>Cook and eat dinner</td><td>6:00 PM</td></tr>
+            <tr><td>Do laundry and prepare for tomorrow</td><td>8:00 PM</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
   </body>
 </html>
